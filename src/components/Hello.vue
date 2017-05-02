@@ -4,7 +4,7 @@
     <h2>已注册用户：{{ total }}</h2>
     <div v-for="user in users">
       <h4>{{ user.name }}， {{ user.registered }}</h4>
-      <button @click="registerUser(user)">点击</button>
+      <button @click="registerUser(user)">注册</button>
     </div>
   </div>
 </template>

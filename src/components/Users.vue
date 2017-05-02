@@ -7,6 +7,7 @@
     <div v-show ="isShow">
       <div v-for ="user in registrations">
         <h4>{{ user.name }}, date: {{ user.date }}</h4>
+        <button @click="unRegisterUser(user)">撤销注册</button>
       </div>
       <button @click="goHome">Go Home!</button>
     </div>
@@ -49,6 +50,9 @@
     methods: {
       goHome () {
         this.$router.push('/')
+      },
+      unRegisterUser (user) {
+        this.$store.commit('unRegister', user)
       }
     }
   }
