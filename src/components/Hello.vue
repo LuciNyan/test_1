@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
-    <h2>{{ total }}</h2>
+    <h2>已注册用户：{{ total }}</h2>
     <div v-for="user in users">
       <h4>{{ user.name }}， {{ user.registered }}</h4>
       <button @click="registerUser(user)">点击</button>
@@ -16,7 +16,8 @@
     computed: {
       ...mapGetters({
         registrations: 'registrations',
-        total: 'totalRegistrations'
+        total: 'totalRegistrations',
+        users: 'unregisteredUsers'
       })
     },
     methods: {
@@ -26,8 +27,7 @@
     },
     data () {
       return {
-        msg: 'LuciNyan',
-        users: this.$store.state.users
+        msg: 'LuciNyan'
       }
     }
   }
